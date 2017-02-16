@@ -342,7 +342,7 @@ namespace Calculator
         void OnSubtractButtonClicked(object sender, EventArgs e)
 
         {
-
+         
             subtractFlag = true;
 
             Button buttonClickedOn = (Button)sender;
@@ -382,8 +382,7 @@ namespace Calculator
         void OnDivideButtonClicked(object sender, EventArgs e)
 
         {
-
-            divideFlag = true;
+             divideFlag = true;
 
             Button buttonClickedOn = (Button)sender;
 
@@ -402,6 +401,7 @@ namespace Calculator
         void OnEqualButtonClicked(object sender, EventArgs e)
 
         {
+            
 
             Button buttonClickedOn = (Button)sender;
 
@@ -411,17 +411,23 @@ namespace Calculator
 
             Char delimiter;
 
+         
+
+           
 
 
 
 
-            if (multiplyFlag == true)
+
+
+
+            if (multiplyFlag == true && value.Length >= 3)
 
             {
 
                 delimiter = 'X';
 
-                String[] parts = value.Split(delimiter);
+                 String [] parts = value.Split(delimiter);
 
 
 
@@ -449,7 +455,7 @@ namespace Calculator
 
             }
 
-            if (divideFlag == true)
+            if (divideFlag == true && value.Length >= 3)
 
             {
 
@@ -485,7 +491,7 @@ namespace Calculator
 
 
 
-            if (addFlag == true)
+            if (addFlag == true && value.Length >= 3 )
 
             {
 
@@ -503,11 +509,15 @@ namespace Calculator
 
                 String value2 = parts[1];
 
-
-
+              
                 Double doublevalue1 = Convert.ToDouble(value1);
 
                 Double doublevalue2 = Convert.ToDouble(value2);
+
+                
+
+              
+                
 
 
 
@@ -521,7 +531,7 @@ namespace Calculator
 
 
 
-            if (subtractFlag == true)
+            if (subtractFlag == true && value.Length >= 3)
 
             {
 
@@ -529,31 +539,34 @@ namespace Calculator
 
                 String[] parts = value.Split(delimiter);
 
-
-
-
-
-
-
                 String value1 = parts[0];
 
                 String value2 = parts[1];
 
-
-
+             
                 Double doublevalue1 = Convert.ToDouble(value1);
-
                 Double doublevalue2 = Convert.ToDouble(value2);
-
-
-
+               
                 displayLabel.Text = (doublevalue1 - doublevalue2).ToString();
 
-                subtractFlag = false;
 
+
+
+
+                subtractFlag = false;
+                
+
+
+
+                
+
+
+                
 
 
             }
+
+          
 
 
 
