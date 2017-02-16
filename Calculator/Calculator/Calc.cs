@@ -9,7 +9,8 @@ namespace Calculator
 {
     class Calc : ContentPage
     {
-        
+        String change;
+
         Label displayLabel;
 
         Boolean multiplyFlag = false;
