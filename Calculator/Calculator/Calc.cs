@@ -43,11 +43,17 @@ namespace Calculator
 
             layout.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
+            var relativeLayout = new RelativeLayout();
+            relativeLayout.Children.Add(layout, // <= Original layout
+                Constraint.Constant(0),
+                Constraint.Constant(0),
+                Constraint.RelativeToParent(p => p.Width),
+                Constraint.RelativeToParent(p => p.Height));
+            Content = relativeLayout;
 
 
 
-
-            Content = layout;
+            
 
 
 
@@ -91,7 +97,7 @@ namespace Calculator
 
             var bSubtract = new Button { Text = "-" };
 
-            var bClear = new Button { Text = "Clear" };
+            var bClear = new Button { Text = "C"};
 
             var bEquals = new Button { Text = "=" };
 
